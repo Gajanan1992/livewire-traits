@@ -19,7 +19,7 @@
         "php": "^8.0",
         "spatie/laravel-package-tools": "^1.9.2",
         "illuminate/contracts": "^9.0",
-        "gajanan1992/livewire-traits":"main"
+        "gajanan1992/livewire-traits":"dev-main"
     },
     "require-dev": {
         "nunomaduro/collision": "^6.0",
