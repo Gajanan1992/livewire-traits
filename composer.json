@@ -1,16 +1,16 @@
 {
-    "name": "gajanan/livewire-traits",
+    "name": "gajanan1992/livewire-traits",
     "description": "This is my package livewire-traits",
     "keywords": [
         "gajanan",
         "laravel",
         "livewire-traits"
     ],
-    "homepage": "https://github.com/gajanan/livewire-traits",
+    "homepage": "https://github.com/Gajanan1992/livewire-traits",
     "license": "MIT",
     "authors": [
         {
-            "name": "Gajanan",
+            "name": "Gajanan1992",
             "email": "khatkegajanan@gmail.com",
             "role": "Developer"
         }
