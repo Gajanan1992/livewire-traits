@@ -13,13 +13,12 @@ class LivewireTraitsCommand extends Command
 
     public function handle(): int
     {
-        $this->info('Installing BlogPackage...');
-        $this->info('Publishing configuration...');
+        $this->info('Publishing traits...');
 
         //check if directory exists
         $directory = app_path() . '/traits';
 
-        if (! File::isDirectory($directory)) {
+        if (!File::isDirectory($directory)) {
             File::makeDirectory($directory, 0755, true, true);
         }
 
@@ -28,7 +27,8 @@ class LivewireTraitsCommand extends Command
             File::copy($file, $directory . '/' . $file->getBasename());
         }
 
-        $this->info('Installed BlogPackage');
+
+        $this->info('Installed traits successfully!');
 
         return self::SUCCESS;
     }
