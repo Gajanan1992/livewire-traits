@@ -18,7 +18,7 @@ class LivewireTraitsCommand extends Command
         //check if directory exists
         $directory = app_path() . '/traits';
 
-        if (!File::isDirectory($directory)) {
+        if (! File::isDirectory($directory)) {
             File::makeDirectory($directory, 0755, true, true);
         }
 
