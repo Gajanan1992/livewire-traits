@@ -1,5 +1,5 @@
 {
-    "name": "Gajanan1992/livewire-traits",
+    "name": "gajanan/livewire-traits",
     "description": "This is my package livewire-traits",
     "keywords": [
         "gajanan",
@@ -10,7 +10,7 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Gajanan1992",
+            "name": "Gajanan",
             "email": "khatkegajanan@gmail.com",
             "role": "Developer"
         }
