@@ -2,9 +2,9 @@
 
 namespace gajanan\LivewireTraits\Tests;
 
+use gajanan\LivewireTraits\LivewireTraitsServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use gajanan\LivewireTraits\LivewireTraitsServiceProvider;
 
 class TestCase extends Orchestra
 {

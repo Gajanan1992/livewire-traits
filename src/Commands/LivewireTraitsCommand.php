@@ -19,17 +19,17 @@ class LivewireTraitsCommand extends Command
         //check if directory exists
         $directory = app_path() . '/traits';
 
-        if (!File::isDirectory($directory)) {
+        if (! File::isDirectory($directory)) {
             File::makeDirectory($directory, 0755, true, true);
         }
 
         $traitFiles = File::files(__DIR__ . '/../../src/Traits');
         foreach ($traitFiles as $key => $file) {
-
             File::copy($file, $directory . '/' . $file->getBasename());
         }
 
         $this->info('Installed BlogPackage');
+
         return self::SUCCESS;
     }
 }
