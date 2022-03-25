@@ -50,6 +50,14 @@
             "pestphp/pest-plugin": true
         }
     },
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/Gajanan1992/livewire-traits",
+            "options": {
+            }
+        }
+    ],
     "extra": {
         "laravel": {
             "providers": [
