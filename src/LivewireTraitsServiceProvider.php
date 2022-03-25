@@ -2,10 +2,9 @@
 
 namespace gajanan\LivewireTraits;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 use gajanan\LivewireTraits\Commands\LivewireTraitsCommand;
 use Illuminate\Support\ServiceProvider;
+use Spatie\LaravelPackageTools\Package;
 
 class LivewireTraitsServiceProvider extends ServiceProvider
 {
