@@ -1,22 +1,6 @@
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
-
 # This is my package livewire-traits
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/gajanan/livewire-traits.svg?style=flat-square)](https://packagist.org/packages/gajanan/livewire-traits)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/gajanan/livewire-traits/run-tests?label=tests)](https://github.com/gajanan/livewire-traits/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/gajanan/livewire-traits/Check%20&%20fix%20styling?label=code%20style)](https://github.com/gajanan/livewire-traits/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/gajanan/livewire-traits.svg?style=flat-square)](https://packagist.org/packages/gajanan/livewire-traits)
-
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/livewire-traits.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/livewire-traits)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+This package provides traits that are commonly used in livewire components.
 
 ## Installation
 
@@ -26,43 +10,28 @@ You can install the package via composer:
 composer require gajanan/livewire-traits
 ```
 
-You can publish and run the migrations with:
+You can publish the utilities traits with:
 
 ```bash
-php artisan vendor:publish --tag="livewire-traits-migrations"
-php artisan migrate
+php artisan livewire-traits:install
+
 ```
 
-You can publish the config file with:
+You can publish the export related traits with:
 
 ```bash
-php artisan vendor:publish --tag="livewire-traits-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="livewire-traits-views"
+php artisan livewire-traits:install --export
 ```
 
 ## Usage
 
-```php
-$livewireTraits = new gajanan\LivewireTraits();
-echo $livewireTraits->echoPhrase('Hello, gajanan!');
-```
+You can see all the traits in traits directory.
+You just need to import traits in you livewire component as per your requirement.
 
 ## Testing
 
 ```bash
-composer test
+./vendor/bin/pest
 ```
 
 ## Changelog
@@ -79,8 +48,8 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Gajanan](https://github.com/)
-- [All Contributors](../../contributors)
+-   [Gajanan](https://github.com/Gajanan1992)
+-   [All Contributors](../../contributors)
 
 ## License
 
