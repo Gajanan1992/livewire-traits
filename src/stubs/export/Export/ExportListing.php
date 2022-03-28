@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class ExportListings implements FromCollection, WithHeadings
+class ExportListing implements FromCollection, WithHeadings
 {
     public function __construct(public Collection $resultCollection, public array $selectedFields, public array $exclude)
     {
