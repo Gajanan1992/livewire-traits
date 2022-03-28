@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\traits;
-
 
 use App\Models\User;
 use App\Notifications\MassNotification;
@@ -19,9 +17,9 @@ trait CanDoMassAction
     #[NoReturn]
     public function excludeFromGroupEmail($modelName)
     {
-
-        if ($this->checkAll)
+        if ($this->checkAll) {
             $this->selectedAll = $this->listedModels;
+        }
 
         if (empty($this->selectedAll)) {
             session()->flash('error', __('no records selected'));
@@ -39,17 +37,18 @@ trait CanDoMassAction
         $model = 'App\\Models\\' . $modelName;
         $model = new $model();
         $model = $model->find($id);
-        if ($model->exclude_group_email == 0)
+        if ($model->exclude_group_email == 0) {
             $model->update(['exclude_group_email' => 1]);
-        else
+        } else {
             $model->update(['exclude_group_email' => 0]);
+        }
         session()->flash('message', __('Record Successfully updated.'));
     }
 
     public function groupCommunication($selectedUsers, $subject, $mailBody)
     {
         $users = User::whereIn('id', $selectedUsers)->where('exclude_group_email', 0)->get();
-        if (!is_null($users)) {
+        if (! is_null($users)) {
             Notification::send($users, new MassNotification($subject, $mailBody));
             session()->flash('message', 'Messages will be sent');
         }
@@ -62,7 +61,6 @@ trait CanDoMassAction
         $model = 'App\\Models\\' . Str::studly(Str::singular($model));
 
         if ($this->isModelExist($model)) {
-
             for ($i = 0; $i < count($selectedIds); $i++) {
                 $record = $model::where('id', $selectedIds[$i])->first();
                 if ($record) {

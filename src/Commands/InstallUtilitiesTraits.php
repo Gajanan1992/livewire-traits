@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\File;
 
 trait InstallUtilitiesTraits
 {
-
     public function installUtilitiesTraits()
     {
         $this->info('installing utilities traits...');

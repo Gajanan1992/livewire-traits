@@ -4,7 +4,6 @@ namespace App\traits;
 
 trait HasDynamicPagination
 {
-
     /**
      * set the default no of records per page
      *
