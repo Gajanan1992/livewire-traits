@@ -9,8 +9,7 @@ trait Sortable
 
     abstract public function setSortableField();
 
-    public function sort($field)
-    {
+    public function sort($field){
         $this->sortableDirection = ($this->sortableDirection === 'ASC') ? 'DESC' : 'ASC';
         $this->sortableField = $field;
     }
