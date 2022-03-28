@@ -1,4 +1,4 @@
-# This is my package livewire-traits
+# About livewire-traits
 
 This package provides traits that are commonly used in livewire components.
 
