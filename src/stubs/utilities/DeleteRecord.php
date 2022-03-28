@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\traits;
 
 use Illuminate\Support\Facades\DB;
@@ -11,8 +10,8 @@ trait DeleteRecord
     public function deleteRecord($model, $id)
     {
         DB::beginTransaction();
-        try {
 
+        try {
             $model = 'App\\Models\\' . Str::studly(Str::singular($model));
 
             if ($this->isModelExist($model)) {
@@ -35,7 +34,6 @@ trait DeleteRecord
 
                 session()->flash('message', 'Record deleted successfully.');
             } else {
-
                 session()->flash('error', 'Something went wrong.');
             }
         } catch (\Exception $ex) {
@@ -47,8 +45,7 @@ trait DeleteRecord
 
     public function isModelExist($model)
     {
-
-        if (!is_subclass_of($model, 'Illuminate\Database\Eloquent\Model')) {
+        if (! is_subclass_of($model, 'Illuminate\Database\Eloquent\Model')) {
             return false;
         }
 

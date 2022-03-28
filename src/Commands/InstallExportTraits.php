@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\File;
 
 trait InstallExportTraits
 {
-
     public function installExportTraits()
     {
         $this->info('installing export utilities traits...');
@@ -14,7 +13,7 @@ trait InstallExportTraits
         $this->requireComposerPackages('inertiajs/inertia-laravel:^0.5.4', 'laravel/sanctum:^2.8', 'tightenco/ziggy:^1.0');
 
         $exportDirectory = app_path('/Exports');
-        if (!File::isDirectory($exportDirectory)) {
+        if (! File::isDirectory($exportDirectory)) {
             File::makeDirectory($exportDirectory, 0755, true, true);
         }
 

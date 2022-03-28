@@ -45,6 +45,7 @@ class ExportListings implements FromCollection, WithHeadings
                     ));
             }
         }
+
         return $processedFields; // array_diff($processedFields,['pivot']);
     }
 }

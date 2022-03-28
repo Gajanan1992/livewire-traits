@@ -5,8 +5,8 @@ namespace App\traits;
 use App\Exports\ExportListings;
 use Illuminate\Support\Str;
 use Maatwebsite\Excel\Facades\Excel;
-use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use SnappyPdf;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
 
 trait ExportsRecords
 {
@@ -19,7 +19,7 @@ trait ExportsRecords
     public $excludedFields = ['pivot'];
     public $type = 'excel';
 
-    abstract function setModels();
+    abstract public function setModels();
 
     public function getFields($excludedColumns = [])
     {
@@ -35,10 +35,11 @@ trait ExportsRecords
         $records = $this->query->get();
         $selectedFields = $this->selectedFields;
         // $this->resetInput();
-        if ($records)
+        if ($records) {
             return Excel::download(new ExportListings($records, $selectedFields, $this->processExcludeFields($this->excludedFields)), 'records.xlsx');
-        else
+        } else {
             session()->flash('error', 'Nothing to export');
+        }
     }
 
     public function exportPdf($selectedFields)
@@ -84,13 +85,13 @@ trait ExportsRecords
         );
     }
 
-
     public function processSelectedFields(): array
     {
         $processedFields = [];
         foreach ($this->selectedFields as $field) {
             $processedFields[] = $field . ' as ' . Str::replace('.', '_', $field);
         }
+
         return array_unique($processedFields);
     }
 
@@ -104,6 +105,7 @@ trait ExportsRecords
                 $excludeFields[] = $field;
             }
         }
+
         return array_unique($excludeFields);
     }
     /*public function referents($type){
