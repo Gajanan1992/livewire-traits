@@ -36,7 +36,7 @@ trait ExportsRecords
         $selectedFields = $this->selectedFields;
         // $this->resetInput();
         if ($records) {
-            return Excel::download(new ExportListings($records, $selectedFields, $this->processExcludeFields($this->excludedFields)), 'records.xlsx');
+            return Excel::download(new ExportListing($records, $selectedFields, $this->processExcludeFields($this->excludedFields)), 'records.xlsx');
         } else {
             session()->flash('error', 'Nothing to export');
         }

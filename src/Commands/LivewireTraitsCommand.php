@@ -30,7 +30,7 @@ class LivewireTraitsCommand extends Command
         $this->info('Publishing traits...');
 
         //check if directory exists
-        if (! File::isDirectory($this->directory)) {
+        if (!File::isDirectory($this->directory)) {
             File::makeDirectory($this->directory, 0755, true, true);
         }
 
@@ -51,9 +51,9 @@ class LivewireTraitsCommand extends Command
     {
         $composer = $this->option('export');
 
-        if ($composer !== 'global') {
-            $command = ['php', $composer, 'require'];
-        }
+        // if ($composer !== 'global') {
+        //     $command = ['php', $composer, 'require'];
+        // }
 
         $command = array_merge(
             $command ?? ['composer', 'require'],
