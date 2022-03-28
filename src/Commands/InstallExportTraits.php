@@ -12,7 +12,7 @@ trait InstallExportTraits
         $this->requireComposerPackages('maatwebsite/excel: ^3.1', 'barryvdh/laravel-snappy: ^0.4.8', 'wemersonjanuario/wkhtmltopdf-windows: 0.12.2.3');
 
         $exportDirectory = app_path('/Exports');
-        if (!File::isDirectory($exportDirectory)) {
+        if (! File::isDirectory($exportDirectory)) {
             File::makeDirectory($exportDirectory, 0755, true, true);
         }
 
